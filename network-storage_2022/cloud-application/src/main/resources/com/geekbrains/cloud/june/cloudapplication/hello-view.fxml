@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox prefHeight="607.0" prefWidth="558.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.geekbrains.cloud.june.cloudapplication.ChatController">
+   <HBox prefHeight="53.0" prefWidth="558.0">
+      <children>
+         <TextField fx:id="login" prefHeight="48.0" prefWidth="186.0" promptText="Введите пароль" />
+         <TextField fx:id="password" prefHeight="48.0" prefWidth="210.0" promptText="Введите логин " />
+         <Button mnemonicParsing="false" onAction="#auth" prefHeight="47.0" prefWidth="156.0" text="Войти" />
+      </children>
+   </HBox>
+   <AnchorPane prefHeight="466.0" prefWidth="560.0">
+      <HBox fx:id="box" layoutY="-2.0" prefHeight="56.0" prefWidth="555.0">
+         <children>
+            <TextField alignment="TOP_CENTER" disable="true" prefHeight="50.0" prefWidth="231.0" promptText="server files">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </TextField>
+            <TextField prefHeight="52.0" prefWidth="87.0" />
+            <TextField alignment="TOP_CENTER" disable="true" prefHeight="54.0" prefWidth="240.0" promptText="client files">
+               <font>
+                  <Font size="23.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="NONE" />
+               </cursor>
+            </TextField>
+         </children>
+      </HBox>
+      <AnchorPane layoutY="82.0" prefHeight="403.0" prefWidth="240.0">
+         <children>
+            <HBox layoutX="9.0" prefHeight="42.0" prefWidth="222.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#upServerFiles" prefHeight="26.0" prefWidth="38.0" text="&lt;" />
+                  <TextField fx:id="server" prefHeight="26.0" prefWidth="179.0" promptText="server files" />
+               </children>
+            </HBox>
+            <ListView fx:id="serverView" layoutX="12.0" layoutY="34.0" prefHeight="334.0" prefWidth="216.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="302.0" layoutY="78.0" prefHeight="371.0" prefWidth="256.0">
+         <children>
+            <HBox layoutX="9.0" layoutY="6.0" prefHeight="28.0" prefWidth="216.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#upClientFiles" prefHeight="26.0" prefWidth="36.0" text="&lt;" />
+                  <TextField fx:id="client" prefHeight="26.0" prefWidth="179.0" promptText="client files" />
+               </children>
+            </HBox>
+            <ListView fx:id="clientView" layoutX="9.0" layoutY="40.0" prefHeight="334.0" prefWidth="216.0" />
+         </children>
+      </AnchorPane>
+      <Button layoutX="240.0" layoutY="182.0" mnemonicParsing="false" onAction="#upload" prefHeight="34.0" prefWidth="63.0" text="&lt;" />
+      <Button layoutX="240.0" layoutY="264.0" mnemonicParsing="false" onAction="#download" prefHeight="34.0" prefWidth="63.0" text="&gt;" />
+   </AnchorPane>
+   <HBox prefHeight="62.0" prefWidth="558.0">
+      <children>
+         <Button fx:id="deleteFileServer" mnemonicParsing="false" prefHeight="40.0" prefWidth="232.0" text="удалить">
+            <font>
+               <Font size="18.0" />
+            </font>
+         </Button>
+         <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="75.0" />
+         <Button fx:id="deleteFileCient" mnemonicParsing="false" prefHeight="42.0" prefWidth="218.0" text="удалить">
+            <font>
+               <Font size="18.0" />
+            </font>
+         </Button>
+      </children>
+   </HBox>
+</VBox>
